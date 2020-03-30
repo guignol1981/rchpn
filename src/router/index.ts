@@ -1,30 +1,36 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import PageLogin from '../pages/page-login.vue';
+import PageTableauDeBord from '../pages/page-tableau-de-bord.vue';
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
-];
+export enum NomsRoutes {
+	Login = 'login',
+	TableaudeBord = 'tableau-de-bord'
+}
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes
-});
+export const routerFactory: (basePath: string) => VueRouter = (
+	basePath: string
+) => {
+	const routes = [
+		{
+			path: '/',
+			name: NomsRoutes.TableaudeBord,
+			component: PageTableauDeBord
+		},
+		{
+			path: '/login',
+			name: NomsRoutes.Login,
+			component: PageLogin
+		}
+	];
 
-export default router;
+	const router = new VueRouter({
+		mode: 'history',
+		base: basePath,
+		routes
+	});
+
+	return router;
+};
