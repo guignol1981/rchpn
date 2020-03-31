@@ -1,12 +1,27 @@
 import Vue from 'vue';
-import Vuetify, { VCard, VApp, VContent, VCardTitle } from 'vuetify/lib';
+import Vuetify, {
+	VCard,
+	VApp,
+	VContent,
+	VCardTitle,
+	VCardSubtitle,
+	VBtn,
+	VIcon,
+	VCardText,
+	VDivider
+} from 'vuetify/lib';
 
 Vue.use(Vuetify, {
 	components: {
 		VApp,
 		VContent,
 		VCard,
-		VCardTitle
+		VCardTitle,
+		VCardSubtitle,
+		VBtn,
+		VIcon,
+		VCardText,
+		VDivider
 	}
 });
 
