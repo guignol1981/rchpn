@@ -3,11 +3,27 @@
 		<div slot="entete">
 			ma navbar
 		</div>
-		<widget-batt
+		<widget-grille>
+			<template slot="widgets">
+				<div class="compact">widget</div>
+				<div class="icon">widget</div>
+				<div class="icon">widget</div>
+				<div class="compact">widget</div>
+				<div class="icon">widget</div>
+				<div class="icon">widget</div>
+				<div class="icon">widget</div>
+				<div class="compact">widget</div>
+				<div class="compact">widget</div>
+				<div class="compact">widget</div>
+				<div class="icon">widget</div>
+				<div class="icon">widget</div>
+			</template>
+		</widget-grille>
+		<!-- <widget-batt
 			v-for="(projet, index) in projets"
 			:projet="projet"
 			:key="index"
-		/>
+		/> -->
 	</template-tableau-de-bord>
 </template>
 
@@ -23,13 +39,15 @@
 		ACTION_OBTENIR_PROJETS
 	} from '../store/modules/service-finance/service-finance-definitions';
 	import { RchpnProjet } from '../store/modules/service-finance/service-finance.models';
+	import WidgetGrille from '../components/communs/widget-grille/widget-grille.vue';
 
 	const serviceFinanceModule: BindingHelpers = namespace('serviceFinance');
 
 	@Component({
 		components: {
 			TemplateTableauDeBord,
-			WidgetBatt
+			WidgetBatt,
+			WidgetGrille
 		}
 	})
 	export default class PageTableauDeBord extends Vue {

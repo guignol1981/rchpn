@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import VueRouter, { RouteConfig } from 'vue-router';
 import PageLogin from '../pages/page-login.vue';
 import PageTableauDeBord from '../pages/page-tableau-de-bord.vue';
 
@@ -13,7 +13,7 @@ export enum NomsRoutes {
 export const routerFactory: (basePath: string) => VueRouter = (
 	basePath: string
 ) => {
-	const routes = [
+	const routes: RouteConfig[] = [
 		{
 			path: '/',
 			name: NomsRoutes.TableaudeBord,

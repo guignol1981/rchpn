@@ -1,7 +1,10 @@
 import { configure, addDecorator } from '@storybook/vue';
 import { withKnobs } from '@storybook/addon-knobs';
-
+import Vue from 'vue';
+import Vuex from 'vuex';
 import vuetify from '../src/plugins/vuetify';
+
+Vue.use(Vuex);
 
 addDecorator(withKnobs as any);
 addDecorator(() => ({

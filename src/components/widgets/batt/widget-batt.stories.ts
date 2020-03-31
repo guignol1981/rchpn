@@ -2,6 +2,7 @@
 import { Component } from 'vue';
 import WidgetBatt from './widget-batt.vue';
 import { select } from '@storybook/addon-knobs';
+import { NiveauxWidget } from '../../../lib/niveaux-widget';
 
 export default {
 	title: `widgets/batt`
@@ -11,7 +12,15 @@ export const Default: () => Component = (): Component => ({
 	components: { WidgetBatt },
 	props: {
 		niveau: {
-			default: select('niveau', [1, 2, 3], 1)
+			default: select(
+				'niveau',
+				[
+					NiveauxWidget.Compact,
+					NiveauxWidget.Normal,
+					NiveauxWidget.Grand
+				],
+				NiveauxWidget.Compact
+			)
 		}
 	},
 	data: () => ({
@@ -21,5 +30,5 @@ export const Default: () => Component = (): Component => ({
 			nomProjet: 'Projet A'
 		}
 	}),
-	template: `<widget-batt :projet="projet" :niveau="niveau"></widget-batt>`
+	template: `<widget-batt :projet="projet" :niveau-widget="niveau"></widget-batt>`
 });
