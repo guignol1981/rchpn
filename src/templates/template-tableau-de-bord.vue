@@ -6,7 +6,7 @@
 			</slot>
 		</div>
 		<div class="tableau-de-bord__corps">
-			<slot name="corps">
+			<slot>
 				corps
 			</slot>
 		</div>
@@ -22,20 +22,36 @@
 </script>
 
 <style lang="scss" scoped>
+	@import '../styles/commun';
+
 	.tableau-de-bord {
-		height: 100vh;
-		background-color: violet;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 
 		&__entete {
-			height: 5rem;
-			background-color: violet;
+			flex-shrink: 0;
+			min-height: 80px;
+			background-color: #1f1f1f;
+			color: #FFF;
+			padding: $rchpn-espacement--l $rchpn-espacement;
+			border-bottom: 1px solid #d7d7d7;
 		}
 
 		&__corps {
-			height: 100%;
-			background-color: greenyellow;
-			display: flex;
-			flex-wrap: wrap;
+			flex: 1 1 auto;
+			background-color: #f4f4f4;
+			padding: $rchpn-espacement--l $rchpn-espacement $rchpn-espacement--l * 2 ;
+
+			@include rchpn-grille-widgets();
+		}
+
+		&__entete,
+		&__corps {
+			@media (min-width: 768px) {
+				padding-left: $rchpn-espacement--l;
+				padding-right: $rchpn-espacement--l;
+			}
 		}
 	}
 </style>

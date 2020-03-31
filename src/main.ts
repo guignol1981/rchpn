@@ -5,6 +5,7 @@ import './registerServiceWorker';
 import vuetify from './plugins/vuetify';
 import { routerFactory } from './router';
 import { AxiosPlugin } from './plugins/axios-plugin';
+import './styles/main.scss';
 
 Vue.config.productionTip = false;
 Vue.use(AxiosPlugin);

@@ -24,8 +24,8 @@
 	@import '../../../styles/commun';
 
 	.widget-batt {
-		height: 200px;
-		width: 200px;
-		margin: $rchpn-espace--l;
+		width: 100%;
+
+		@include rchpn-hauteur-widget();
 	}
 </style>
