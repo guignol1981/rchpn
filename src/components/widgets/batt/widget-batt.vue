@@ -21,10 +21,11 @@
 </script>
 
 <style lang="scss" scoped>
-	// @import 'commun';
+	@import '../../../styles/commun';
 
 	.widget-batt {
-		height: 10rem;
-		margin-top: $rchpn-espace--s;
+		height: 200px;
+		width: 200px;
+		margin: $rchpn-espace--l;
 	}
 </style>
