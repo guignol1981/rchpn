@@ -41,8 +41,6 @@
 	@import '../../../styles/commun';
 
 	.widget-batt {
-		height: 300px;
-		width: 300px;
 		margin: $rchpn-espace--l;
 		position: relative;
 
@@ -63,5 +61,8 @@
 			left: 50%;
 			transform: translateX(-50%) translateY(50%);
 		}
+		width: 100%;
+
+		@include rchpn-hauteur-widget();
 	}
 </style>

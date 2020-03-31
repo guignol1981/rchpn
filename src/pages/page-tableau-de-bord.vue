@@ -4,11 +4,10 @@
 			ma navbar
 		</div>
 		<widget-batt
-			slot="corps"
 			v-for="(projet, index) in projets"
 			:projet="projet"
 			:key="index"
-		></widget-batt>
+		/>
 	</template-tableau-de-bord>
 </template>
 

@@ -1,0 +1,27 @@
+
+@mixin rchpn-grille-widgets() {
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($rchpn-largeur-widget--s, 1fr));
+    grid-gap: #{$rchpn-espacement};
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax($rchpn-largeur-widget, 1fr));
+        grid-gap: #{$rchpn-espacement--l};
+    }
+
+    @media (min-width: 1024px) {
+         grid-template-columns: repeat(auto-fit, minmax($rchpn-largeur-widget--l, 1fr));
+    }
+}
+
+@mixin rchpn-hauteur-widget() {
+    height: $rchpn-largeur-widget--s;
+
+    @media (min-width: 768px) {
+        height: $rchpn-largeur-widget;
+    }
+
+    @media (min-width: 1024px) {
+        height: $rchpn-largeur-widget--l;
+    }
+}
