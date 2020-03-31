@@ -1,7 +1,7 @@
 import { ServiceFinance } from './service-finance.service';
 import { Module, ActionContext } from 'vuex';
 import { ServiceFinanceState } from './service-finance.state';
-import { AppState } from '..';
+import { AppState } from '../..';
 import {
 	GETTER_PROJETS,
 	ACTION_OBTENIR_PROJETS,

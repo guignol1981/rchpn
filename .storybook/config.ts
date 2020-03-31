@@ -1,18 +1,23 @@
 import { configure, addDecorator } from '@storybook/vue';
 import { withKnobs } from '@storybook/addon-knobs';
-import { VApp } from 'vuetify/lib';
 
 import vuetify from '../src/plugins/vuetify';
 
 addDecorator(withKnobs as any);
 addDecorator(() => ({
 	vuetify,
-	components: { VApp },
 	template: `
     <v-app>
-      <div>
-          <story/>
-      </div>
+        <v-content>
+            <story/>
+        </v-content>
     </v-app>
   `
 }));
+
+function loadStories() {
+	const req = require.context('../src', true, /.stories.ts$/);
+	req.keys().forEach(filename => req(filename));
+}
+
+configure(loadStories, module);

@@ -35,6 +35,7 @@
 			height: 100%;
 			background-color: greenyellow;
 			display: flex;
+			flex-wrap: wrap;
 		}
 	}
 </style>

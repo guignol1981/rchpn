@@ -1,7 +1,9 @@
 <template>
-	<div class="m-u--app-body">
-		<router-view></router-view>
-	</div>
+	<v-app>
+		<v-content>
+			<router-view></router-view>
+		</v-content>
+	</v-app>
 </template>
 
 <script lang="ts">

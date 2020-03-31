@@ -22,8 +22,8 @@
 	import {
 		GETTER_PROJETS,
 		ACTION_OBTENIR_PROJETS
-	} from '../store/modules/service-finance-definitions';
-	import { RchpnProjet } from '../store/modules/service-finance.models';
+	} from '../store/modules/service-finance/service-finance-definitions';
+	import { RchpnProjet } from '../store/modules/service-finance/service-finance.models';
 
 	const serviceFinanceModule: BindingHelpers = namespace('serviceFinance');
 
